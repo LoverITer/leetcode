@@ -7,7 +7,7 @@ import java.util.Objects;
 
 /**
  * @author HuangXin
- * @since 2019/2/11 21:06
+ * @since 2020/2/11 21:06
  * 根据LeetCode算法题总结出来的一个有关数组的工具类
  */
 public class ArrayUtils {
