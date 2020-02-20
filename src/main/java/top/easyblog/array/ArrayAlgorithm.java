@@ -5,23 +5,24 @@ import java.util.Arrays;
 import java.util.Objects;
 
 /**
+ * 根据LeetCode算法题总结出来的一个有关数组的工具类
+ *
  * @author HuangXin
  * @since 2020/2/11 21:06
- * 根据LeetCode算法题总结出来的一个有关数组的工具类
  */
-public class ArrayUtils {
+public class ArrayAlgorithm {
 
-    private static ArrayUtils arrayUtils = null;
+    private static ArrayAlgorithm arrayUtils = null;
 
-    private ArrayUtils() {
+    private ArrayAlgorithm() {
 
     }
 
-    public static ArrayUtils getInstance() {
+    public static ArrayAlgorithm getInstance() {
         if (Objects.isNull(arrayUtils)) {
-            synchronized (ArrayUtils.class) {
+            synchronized (ArrayAlgorithm.class) {
                 if (Objects.isNull(arrayUtils)) {
-                    arrayUtils = new ArrayUtils();
+                    arrayUtils = new ArrayAlgorithm();
                 }
             }
         }
@@ -53,14 +54,14 @@ public class ArrayUtils {
 
 
     /**
-     * 移除一个数组中职位val的数<br/>
-     * 思路：基于遍历数组，当nums[i]==val时，把nums[i]和数组末尾的值交换一下，并释放最后一个数（实际上是然数组的长度-1）
+     * 移除一个数组中的位val的数<br/>
+     * 思路：遍历数组，当nums[i]==val时，把nums[i]和数组末尾的值交换一下，并释放最后一个数（实际上是然数组的长度-1）
      * 注意：但是有可能我们最后一个数也是需要删除的。对于这个问题无序担心，因为每次交换会对nums[i]进行两次检查
      * 复杂度： 时间复杂度O(n)   空间复杂度O(1)
      *
      * @param nums 目标数组
      * @param val  数组中要移除的数
-     * @return  int[]
+     * @return int[]
      */
     public int[] removeElement(int[] nums, int val) {
         if (nums == null || nums.length == 0) {

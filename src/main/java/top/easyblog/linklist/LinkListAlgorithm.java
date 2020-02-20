@@ -6,19 +6,19 @@ import java.util.Objects;
  * @author HuangXin
  * @since 2020/2/11 21:08
  */
-public class LinkListUtils {
+public class LinkListAlgorithm {
 
-    private static LinkListUtils linkListUtils = null;
+    private static LinkListAlgorithm linkListUtils = null;
 
-    private LinkListUtils() {
+    private LinkListAlgorithm() {
 
     }
 
-    public static LinkListUtils getInstance() {
+    public static LinkListAlgorithm getInstance() {
         if (Objects.isNull(linkListUtils)) {
-            synchronized (LinkListUtils.class) {
+            synchronized (LinkListAlgorithm.class) {
                 if (Objects.isNull(linkListUtils)) {
-                    linkListUtils = new LinkListUtils();
+                    linkListUtils = new LinkListAlgorithm();
                 }
             }
         }

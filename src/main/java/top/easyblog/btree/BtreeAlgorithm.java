@@ -1,26 +1,24 @@
 package top.easyblog.btree;
 
-import top.easyblog.array.ArrayUtils;
-
 import java.util.Objects;
 
 /**
  * @author HuangXin
  * @since 2020/2/11 21:07
  */
-public class BTreeUtils {
+public class BtreeAlgorithm {
 
-    private static BTreeUtils bTreeUtils = null;
+    private static BtreeAlgorithm bTreeUtils = null;
 
-    private BTreeUtils() {
+    private BtreeAlgorithm() {
 
     }
 
-    public static BTreeUtils getInstance() {
+    public static BtreeAlgorithm getInstance() {
         if (Objects.isNull(bTreeUtils)) {
-            synchronized (ArrayUtils.class) {
+            synchronized (BtreeAlgorithm.class) {
                 if (Objects.isNull(bTreeUtils)) {
-                    bTreeUtils = new BTreeUtils();
+                    bTreeUtils = new BtreeAlgorithm();
                 }
             }
         }
