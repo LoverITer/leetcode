@@ -30,14 +30,12 @@ public class MathematicalAlgorithm {
                 return Integer.MAX_VALUE;
             }
         }
-        long a = dividend;
-        long b = divisor;
         int sign = 1;
-        boolean isOpposite = (a > 0 && b < 0) || (a < 0 && b > 0);
+        boolean isOpposite = ((long) dividend > 0 && (long) divisor < 0) || ((long) dividend < 0 && (long) divisor > 0);
         if (isOpposite) {
             sign = -1;
         }
-        long res = div(Math.abs(a), Math.abs(b));
+        long res = div(Math.abs((long) dividend), Math.abs((long) divisor));
         if (sign > 0) {
             return res > Integer.MAX_VALUE ? Integer.MAX_VALUE : (int) res;
         }
