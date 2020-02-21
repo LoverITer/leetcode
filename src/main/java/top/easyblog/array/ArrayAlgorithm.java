@@ -75,17 +75,16 @@ public class ArrayAlgorithm {
         while (index >= 0 && nums[index + 1] <= nums[index]) {
             index--;
         }
-        //交换index位置的数字nums[index]和已遍历的逆序区域中仅大于nums[index]的数字
         if (index >= 0) {
             int j = nums.length - 1;
             //找到已近遍历过的逆序区域中仅仅比nums[index]大的数
             while (j >= 0 && nums[j] <= nums[index]) {
                 j--;
             }
-            //交换
+            //交换nums[index]和仅仅比nums[index]大的数
             swap(nums, index, j);
         }
-        //将遍历过的逆序区域转换为顺序
+        //将遍历过的逆序区域转换为顺序,i一定是一次交换中较小的数，j一定是一次交换中较大的数，因此直接交换他们即可
         for (int i = index + 1, j = nums.length - 1; i < j; i++, j--) {
             swap(nums, i, j);
         }
