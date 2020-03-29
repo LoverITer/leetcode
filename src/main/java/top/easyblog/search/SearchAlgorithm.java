@@ -20,15 +20,15 @@ public class SearchAlgorithm {
      * @param target 关键字
      * @return 关键字在数组中的索引，如果没找到返回-1
      */
-    public int BinarySearch(int[] nums, int head, int tail, int target) {
+    public int binarySearch(int[] nums, int head, int tail, int target) {
        if(Objects.nonNull(nums)&&nums.length>0){
            int mid=(head+tail)>>>1;
            if(nums[mid]==target){
                return mid;
            }else if(nums[mid]>target){
-               return BinarySearch(nums,head,mid+1,target);
+               return binarySearch(nums,head,mid+1,target);
            }else{
-               return BinarySearch(nums,mid-1,tail,target);
+               return binarySearch(nums,mid-1,tail,target);
            }
        }
        return -1;
@@ -37,7 +37,7 @@ public class SearchAlgorithm {
 
     public static void main(String[] args) {
         int[] nums=new int[]{1,2,3,4,5,9,67};
-        System.out.println(new SearchAlgorithm().BinarySearch(nums,0,nums.length-1,5));
+        System.out.println(new SearchAlgorithm().binarySearch(nums,0,nums.length-1,5));
     }
 
 }

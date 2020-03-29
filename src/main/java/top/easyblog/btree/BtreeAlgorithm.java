@@ -8,22 +8,7 @@ import java.util.Objects;
  */
 public class BtreeAlgorithm {
 
-    private static BtreeAlgorithm bTreeUtils = null;
 
-    private BtreeAlgorithm() {
-
-    }
-
-    public static BtreeAlgorithm getInstance() {
-        if (Objects.isNull(bTreeUtils)) {
-            synchronized (BtreeAlgorithm.class) {
-                if (Objects.isNull(bTreeUtils)) {
-                    bTreeUtils = new BtreeAlgorithm();
-                }
-            }
-        }
-        return bTreeUtils;
-    }
 
 
 }
