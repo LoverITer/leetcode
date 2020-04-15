@@ -113,12 +113,6 @@ public class LinkListAlgorithm {
     }
 
 
-    public static void main(String[] args) {
-        ListNode head = new ListNode(12);
-        head.addListNode(23);
-        head.addListNode(34);
 
-        head.printListNode();
-    }
 
 }

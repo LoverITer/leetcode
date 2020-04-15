@@ -1,6 +1,4 @@
-package top.easyblog.btree;
-
-import java.util.Objects;
+package top.easyblog.binarytree;
 
 /**
  * @author HuangXin

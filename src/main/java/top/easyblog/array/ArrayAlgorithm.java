@@ -105,10 +105,6 @@ public class ArrayAlgorithm {
     }
 
 
-    public static void main(String[] args) {
-        int[] nums = new int[]{1,5,8,4,7,6,5,3,1};
-        new ArrayAlgorithm().nextPermutation(nums);
-        System.out.println(Arrays.toString(nums));
-    }
+
 
 }

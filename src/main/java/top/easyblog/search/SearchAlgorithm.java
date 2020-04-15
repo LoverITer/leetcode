@@ -35,9 +35,6 @@ public class SearchAlgorithm {
     }
 
 
-    public static void main(String[] args) {
-        int[] nums=new int[]{1,2,3,4,5,9,67};
-        System.out.println(new SearchAlgorithm().binarySearch(nums,0,nums.length-1,5));
-    }
+
 
 }
