@@ -9,7 +9,7 @@ package top.easyblog.sort;
  * @modified ：
  * @since ：2020/04/16 00:07
  */
-public class BubbleSort implements Sorting {
+public class BubbleSort implements Sort {
 
 
     /**
@@ -30,9 +30,8 @@ public class BubbleSort implements Sorting {
             //标记在这一趟中是否发生过移动，如果没有发生过移动那就说明已经有序了，就可以提前结束
             boolean moved = false;
             for (int j = 0; j < sortBorder; j++) {
-                int tmp = 0;
                 if (array[j] > array[j + 1]) {
-                    tmp = array[j];
+                    int tmp = array[j];
                     array[j] = array[j + 1];
                     array[j + 1] = tmp;
                     moved = true;

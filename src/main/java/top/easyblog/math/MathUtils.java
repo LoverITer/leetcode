@@ -5,7 +5,7 @@ package top.easyblog.math;
  * @modified ：
  * @since ：2020/02/21 00:11
  */
-public class MathematicalAlgorithm {
+public class MathUtils {
 
 
     /**

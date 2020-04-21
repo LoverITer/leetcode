@@ -5,7 +5,7 @@ package top.easyblog.sort;
  * @modified ：
  * @since ：2020/04/16 00:15
  */
-public interface Sorting {
+public interface Sort {
     /**
      * 排序逻辑
      *
