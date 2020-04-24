@@ -1,6 +1,9 @@
 package top.easyblog.array;
 
+import java.math.BigInteger;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * @author ：huangxin
@@ -136,5 +139,164 @@ public class ArrayUtils {
     }
 
 
+    /**
+     * 给定一个由整数组成的非空数组所表示的非负整数，在该数的基础上加一。
+     * 最高位数字存放在数组的首位， 数组中每个元素只存储单个数字。
+     * 你可以假设除了整数 0 之外，这个整数不会以零开头。
+     * <code>
+     * 输入: [1,2,3]
+     * 输出: [1,2,4]
+     * 解释: 输入数组表示数字 123。
+     * <code/>
+     *
+     * @param digits
+     * @return
+     */
+    public int[] plusOne(int[] digits) {
+        int len = -1;
+        if (digits == null || (len = digits.length) <= 0) {
+            return null;
+        }
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < len; i++) {
+            sb.append(digits[i]);
+        }
+        BigInteger bigInteger = new BigInteger(sb.toString());
+        //+1
+        String newDigits = String.valueOf(bigInteger.add(BigInteger.ONE));
+        char[] ch = newDigits.toCharArray();
+        int[] array = new int[ch.length];
+        for (int i = 0; i < ch.length; i++) {
+            array[i] = Integer.parseInt(ch[i] + "");
+        }
+        return array;
+    }
+
+
+    /**
+     * 在一个给定的数组nums中，总是存在一个最大元素 。
+     * <p>
+     * 查找数组中的最大元素是否至少是数组中每个其他数字的两倍。
+     * <p>
+     * 如果是，则返回最大元素的索引，否则返回-1
+     *
+     * @param nums
+     * @return
+     */
+    public int dominantIndex(int[] nums) {
+        int len;
+        if (nums == null || (len = nums.length) <= 2) {
+            return -1;
+        }
+
+        int first = 0, second = 0, index = 0;
+        for (int i = 0; i < len; i++) {
+            if (nums[i] > first) {
+                //联动更新
+                second = first;
+                first = nums[i];
+                index = i;
+            } else if (nums[i] > second) {
+                second = nums[i];
+            }
+        }
+        return first >= 2 * second ? index : -1;
+    }
+
+    /**
+     * 对角线遍历一个二维数组
+     * <pre>
+     * 输入:
+     * [
+     * [ 1, 2, 3 ],
+     * [ 4, 5, 6 ],
+     * [ 7, 8, 9 ]
+     * ]
+     * <p>
+     * 输出:  [1,2,4,7,5,3,6,8,9]
+     * 解释：
+     * <img src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/10/12/diagonal_traverse.png">
+     * </pre>
+     *
+     * @param matrix
+     */
+    public void findDiagonalOrder(int[][] matrix) {
+        int m = 0;
+        if (matrix == null || (m = matrix.length) <= 0) {
+            return;
+        }
+        int n = matrix[0].length;
+        int row = 0, col = 0;
+        int[] result = new int[n * m];
+        for (int i = 0; i < result.length; i++) {
+            result[i] = matrix[row][col];
+            int indexSum = row + col;
+            if ((indexSum >> 1) << 1 == indexSum) {
+                if (col == n - 1) {
+                    row++;
+                } else if (row == 0) {
+                    col++;
+                } else {
+                    row--;
+                    col++;
+                }
+            } else {
+                if (row == m - 1) {
+                    col++;
+                } else if (col == 0) {
+                    row++;
+                } else {
+                    row++;
+                    col--;
+                }
+            }
+        }
+    }
+
+
+    /**
+     * 顺时针打印二维数组
+     * 给定一个包含 m x n 个元素的矩阵（m 行, n 列），请按照顺时针螺旋顺序，返回矩阵中的所有元素。
+     * <pre>
+     *输入:
+     *     [
+     *      [ 1, 2, 3 ],
+     *      [ 4, 5, 6 ],
+     *      [ 7, 8, 9 ]
+     *     ]
+     * 输出: [1,2,3,6,9,8,7,4,5]
+     * </pre>
+     * @param matrix
+     * @return
+     */
+    public List<Integer> spiralOrder(int[][] matrix) {
+        List<Integer> ans = new ArrayList<>();
+        if (matrix == null || matrix.length == 0) {
+            return ans;
+        }
+        int r1 = 0, r2 = matrix.length - 1;
+        int c1 = 0, c2 = matrix[0].length - 1;
+        while (r1 <= r2 && c1 <= c2) {
+            for (int c = c1; c <= c2; c++) {
+                ans.add(matrix[r1][c]);
+            }
+            for (int r = r1 + 1; r <= r2; r++) {
+                ans.add(matrix[r][c2]);
+            }
+            if (r1 < r2 && c1 < c2) {
+                for (int c = c2 - 1; c > c1; c--) {
+                    ans.add(matrix[r2][c]);
+                }
+                for (int r = r2; r > r1; r--) {
+                    ans.add(matrix[r][c1]);
+                }
+            }
+            r1++;
+            r2--;
+            c1++;
+            c2--;
+        }
+        return ans;
+    }
 
 }

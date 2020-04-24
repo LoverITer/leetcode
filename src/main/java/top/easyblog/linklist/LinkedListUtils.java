@@ -6,7 +6,7 @@ package top.easyblog.linklist;
  * @author HuangXin
  * @since 2020/2/11 21:08
  */
-public class LinkListAlgorithm {
+public class LinkedListUtils {
 
     /**
      * 对链表进行O（nlogn）排序

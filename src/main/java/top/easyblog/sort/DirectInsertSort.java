@@ -19,7 +19,7 @@ public class DirectInsertSort implements Sort {
     public void sort(int[] array) {
         //外层遍历无序序列
         for (int i = 1; i < array.length; i++) {
-            //内层挨个和有序序列比较，这里是可以优化的地方
+            //内层逐个和有序序列比较，这里是可以优化的地方
             for (int j = i - 1; (j >= 0) && (array[j] > array[j + 1]); j--) {
                 ArrayUtils.swap(array, j, j + 1);
             }
@@ -36,10 +36,10 @@ public class DirectInsertSort implements Sort {
      */
     public void binarySort(int[] array) {
         for (int i = 1; i < array.length; i++) {
-            int tmp = array[i];
-            //定位应该插入到的位置
+            int tmp=array[i];
+            //在有序序列中定位array[i]应该插入到的位置
             int insertIndex = findInsertIndex(array, 0, i - 1, tmp);
-            //直接移动元素即可
+            //移动数组元素，给待插入的元素腾位置
             for (int j = i; j > insertIndex; j--) {
                 array[j] = array[j - 1];
             }
