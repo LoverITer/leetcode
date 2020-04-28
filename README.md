@@ -40,4 +40,4 @@
 <td align="center">字符串处理的有关算法</td>
 </tr>
 </tbody>
-</table>Utils |  字符串处理的有关算法 |
+</table>
