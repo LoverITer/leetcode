@@ -25,14 +25,14 @@ public class ArrayUtils {
         if (nums == null || nums.length == 0) {
             return null;
         }
-        int fast = 0;
-        for (int slow = 1; slow < nums.length; slow++) {
-            if (nums[slow] != nums[fast]) {
-                fast++;
-                nums[fast] = nums[slow];
+        int slower = 0;
+        for (int faster = 1; faster < nums.length; faster++) {
+            if (nums[faster] != nums[slower]) {
+                slower++;
+                nums[slower] = nums[faster];
             }
         }
-        return Arrays.copyOf(nums, fast + 1);
+        return Arrays.copyOf(nums, slower + 1);
     }
 
 
@@ -337,6 +337,27 @@ public class ArrayUtils {
             }
         }
         return new int[0];
+    }
+
+    /**
+     * 移动数组中间的所有0 到数组末尾
+     *
+     * <img src="https://pic.leetcode-cn.com/36d1ac5d689101cbf9947465e94753c626eab7fcb736ae2175f5d87ebc85fdf0-283_2.gif"/>
+     * @param nums
+     */
+    public void moveZeroes(int[] nums) {
+        int len;
+        if(nums==null||(len=nums.length)==0){
+            return;
+        }
+        int j=0;
+        for(int i=0;i<len;i++){
+            if(nums[i]!=0){
+                int t=nums[i];
+                nums[i]=nums[j];
+                nums[j++]=t;
+            }
+        }
     }
 
 }
