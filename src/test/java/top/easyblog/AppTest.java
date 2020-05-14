@@ -6,10 +6,9 @@ import top.easyblog.math.MathUtils;
 import top.easyblog.search.SearchAlgorithm;
 import top.easyblog.sort.DirectInsertSort;
 import top.easyblog.sort.QuickSort;
-import top.easyblog.sort.SelectionSort;
 import top.easyblog.string.StringUtils;
 
-import java.util.ArrayList;
+import java.io.File;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -83,5 +82,41 @@ public class AppTest {
         long end=System.nanoTime();
         System.out.println("Completed! Cost "+(end-start)+"ns");
         System.out.println(Arrays.toString(array));
+    }
+
+    int indentLevel = -1;
+    String htmlPath = "";
+
+    @Test
+    public void listPath() {
+        File path = new File("C:\\Tomcat_Home\\apache-tomcat-7.0.96");
+        listPath(path);
+    }
+
+    public void listPath(File path) {
+        File files[];
+        indentLevel++;
+        files = path.listFiles();
+        Arrays.sort(files);
+        for (int i = 0, n = files.length; i < n; i++) {
+            for (int indent = 0; indent < indentLevel; indent++) {
+               if(indent==indentLevel-1) {
+                   System.out.print("├──");
+               }else{
+                   System.out.print("│");
+               }
+
+            }
+            File file = files[i];
+            if (file.isDirectory()) {
+                System.out.println(" " + file.getAbsolutePath());
+            } else {
+                System.out.println(" " + file.getName());
+            }
+            if (files[i].isDirectory()) {
+                listPath(files[i]);
+            }
+        }
+        indentLevel--;
     }
 }

@@ -19,12 +19,15 @@ public class LinkedListUtils {
         /**
          * 打印链表结点
          */
-        public void printListNode() {
+        @Override
+        public String toString() {
             ListNode p = this;
+            StringBuilder sb = new StringBuilder();
             while (p != null) {
-                System.out.print(p.val + " ");
+                sb.append(p.val).append(" ");
                 p = p.next;
             }
+            return sb.toString();
         }
 
 
