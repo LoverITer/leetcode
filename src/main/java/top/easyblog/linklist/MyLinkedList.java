@@ -6,6 +6,7 @@ import java.lang.reflect.Method;
 import java.util.HashMap;
 
 /**
+ * 实现一个单链表
  * @author ：huangxin
  * @modified ：
  * @since ：2020/05/03 22:22

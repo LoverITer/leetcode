@@ -4,7 +4,7 @@ import org.junit.Test;
 import top.easyblog.array.ArrayUtils;
 import top.easyblog.math.MathUtils;
 import top.easyblog.search.SearchAlgorithm;
-import top.easyblog.sort.DirectInsertSort;
+import top.easyblog.sort.InsertionSort;
 import top.easyblog.sort.QuickSort;
 import top.easyblog.string.StringUtils;
 
@@ -34,7 +34,7 @@ public class AppTest {
         int[] array = {45,3,1,7,23,44};
         /*new BubbleSort().sort(array);
         System.out.println(Arrays.toString(array));*/
-        DirectInsertSort insertSort = new DirectInsertSort();
+        InsertionSort insertSort = new InsertionSort();
         insertSort.binarySort(array);
         System.out.println(Arrays.toString(array));
 
@@ -68,12 +68,12 @@ public class AppTest {
     @Test
     public void testForSort(){
 
-        int[] array=new int[100_000];
+        int[] array=new int[500_000];
         Random random = new Random();
-        for(int i=0;i<100_000;i++){
-            array[i]=random.nextInt(100000);
+        for(int i=0;i<500_000;i++){
+            array[i]=random.nextInt(50000000);
         }
-
+        System.out.println(Arrays.toString(array));
         long start=System.nanoTime();
         ///SelectionSort sort = new SelectionSort();
         System.out.println("starting sort....");

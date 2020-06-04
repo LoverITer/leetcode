@@ -2,8 +2,6 @@ package top.easyblog.sort;
 
 import top.easyblog.array.ArrayUtils;
 
-import java.util.Arrays;
-
 /**
  * 直接插入排序Java实现
  * 直接插入排序将一个序列分成已排序序列（有序序列）和未排序序列（无序序列）,
@@ -13,7 +11,7 @@ import java.util.Arrays;
  * @modified ：
  * @since ：2020/04/21 23:30
  */
-public class DirectInsertSort implements Sort {
+public class InsertionSort implements Sort {
 
     @Override
     public void sort(int[] array) {
