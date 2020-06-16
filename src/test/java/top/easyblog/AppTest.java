@@ -1,9 +1,11 @@
 package top.easyblog;
 
+import com.google.common.hash.BloomFilter;
+import com.google.common.hash.Funnel;
+import com.google.common.hash.Funnels;
 import org.junit.Test;
 import top.easyblog.array.ArrayUtils;
 import top.easyblog.math.MathUtils;
-import top.easyblog.search.SearchAlgorithm;
 import top.easyblog.sort.InsertionSort;
 import top.easyblog.sort.QuickSort;
 import top.easyblog.string.StringUtils;
@@ -50,12 +52,6 @@ public class AppTest {
     }
 
 
-    @Test
-    public void testForSearchUtils() {
-        SearchAlgorithm searchAlgorithm = new SearchAlgorithm();
-        int[] nums = new int[]{3,5,1};
-        System.out.println(searchAlgorithm.search(nums, 3));
-    }
 
 
     @Test

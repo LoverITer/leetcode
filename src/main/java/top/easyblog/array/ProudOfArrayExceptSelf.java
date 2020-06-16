@@ -1,7 +1,7 @@
 package top.easyblog.array;
 
 /**
- * <h4>238.除自身以外数组的乘积<h4/>
+ * <h4>力扣238题.除自身以外数组的乘积<h4/>
  * <p>你一个长度为 n 的整数数组 nums，其中 n > 1，返回输出数组 output ，
  * 其中 output[i] 等于 nums 中除 nums[i] 之外其余各元素的乘积。</p>
  * <p>
@@ -44,11 +44,5 @@ public class ProudOfArrayExceptSelf {
         return answer;
     }
 
-    public static void main(String[] args) {
-        int[] ints = productExceptSelf(new int[]{6, 3, 2, 1, 8});
-        for (int i : ints) {
-            System.out.println(i);
-        }
-    }
 
 }

@@ -45,11 +45,11 @@ public class QuickSort implements Sort {
         //将数组的首元素作为基准元素，进行划分数组
         int pivot = array[low];
         while (low < high) {
-            while (low < high && array[high] >= pivot) {
+            while (low < high && array[high] > pivot){
                 high--;
             }
             array[low] = array[high];
-            while (low < high && array[low] <= pivot) {
+            while (low < high && array[low] <= pivot){
                 low++;
             }
             array[high] = array[low];
@@ -85,6 +85,14 @@ public class QuickSort implements Sort {
         array[low] = array[mark];
         array[mark] = pivot;
         return mark;
+    }
+
+    public static void main(String[] args) {
+        int[] array=new int[]{5,3,6,8,2,1,9,0};
+        new QuickSort().sort(array);
+        for (int i : array) {
+            System.out.print(i+" ");
+        }
     }
 
 }
