@@ -1,5 +1,8 @@
 package top.easyblog.math;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  * <h4>LeetCode 67. 二进制求和</h4>
  * 给你两个二进制字符串，返回它们的和（用二进制表示）。
@@ -15,7 +18,7 @@ package top.easyblog.math;
  * @modified ：
  * @since ：2020/06/08 11:49
  */
-public class BinarySum {
+public class 二进制求和 {
 
     public String addBinary(String a, String b) {
         if (isEmpty(a)) {
@@ -31,9 +34,10 @@ public class BinarySum {
             sum += i >= 0 ? a.charAt(i) - '0' : 0;
             sum += j >= 0 ? b.charAt(j) - '0' : 0;
             answer.append(sum % 2);
+            //进位位
             carry = sum / 2;
         }
-        //最高位溢出
+        //最高位溢出检测
         answer.append(carry == 1 ? carry : "");
         //反转输出结果
         return answer.reverse().toString();
@@ -44,9 +48,5 @@ public class BinarySum {
         return str == null || str.length() == 0;
     }
 
-
-    public static void main(String[] args) {
-        System.out.println(new BinarySum().addBinary("1010", "1011"));
-    }
 
 }

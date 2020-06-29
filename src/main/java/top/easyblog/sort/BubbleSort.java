@@ -9,7 +9,7 @@ package top.easyblog.sort;
  * @modified ：
  * @since ：2020/04/16 00:07
  */
-public class BubbleSort implements Sort {
+public class BubbleSort {
 
 
     /**
@@ -17,7 +17,6 @@ public class BubbleSort implements Sort {
      *
      * @param array
      */
-    @Override
     public void sort(int[] array) {
         if (array == null || array.length == 0) {
             return;

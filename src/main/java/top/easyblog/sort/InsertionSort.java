@@ -11,9 +11,8 @@ import top.easyblog.array.ArrayUtils;
  * @modified ：
  * @since ：2020/04/21 23:30
  */
-public class InsertionSort implements Sort {
+public class InsertionSort  {
 
-    @Override
     public void sort(int[] array) {
         //外层遍历无序序列
         for (int i = 1; i < array.length; i++) {

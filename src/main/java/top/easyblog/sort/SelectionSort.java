@@ -5,7 +5,7 @@ package top.easyblog.sort;
  * @modified ：
  * @since ：2020/05/01 23:01
  */
-public class SelectionSort implements Sort {
+public class SelectionSort {
 
 
     /**
@@ -13,7 +13,6 @@ public class SelectionSort implements Sort {
      * 遍历数据，每次从无序序列中找一个比最后一个有序序列大的元素然后放到有序序列末尾即可
      * @param array
      */
-    @Override
     public void sort(int[] array) {
         if(array==null||array.length==0){
             return;

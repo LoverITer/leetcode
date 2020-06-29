@@ -5,7 +5,7 @@ package top.easyblog.sort;
  * @modified ：
  * @since ：2020/05/01 23:12
  */
-public class QuickSort implements Sort {
+public class QuickSort {
 
     /**
      * 快速排序JAVA实现
@@ -16,8 +16,7 @@ public class QuickSort implements Sort {
      *
      * @param array
      */
-    @Override
-    public void sort(int[] array) {
+    public void quickSort(int[] array) {
         if (array == null || array.length == 0) {
             return;
         }
@@ -85,14 +84,6 @@ public class QuickSort implements Sort {
         array[low] = array[mark];
         array[mark] = pivot;
         return mark;
-    }
-
-    public static void main(String[] args) {
-        int[] array=new int[]{5,3,6,8,2,1,9,0};
-        new QuickSort().sort(array);
-        for (int i : array) {
-            System.out.print(i+" ");
-        }
     }
 
 }

@@ -41,8 +41,15 @@ public class LinkedListSorter {
 
 
     /**
-     * 实现对链表的O（nlogn）排序算法——归并排序
-     *
+     * 对链表的O(nlogn)时间复杂度排序——归并排序实现
+     * 归并排序是对链表排序最快的一种方式，原理示意如下：
+     * <pre>
+     * 举个简单的例子,有一个链表：[4,3,1,7,8,9,2,11,5,6]，使用归并排序：
+     * step=1: (3->4)->(1->7)->(8->9)->(2->11)->(5->6)
+     * step=2: (1->3->4->7)->(2->8->9->11)->(5->6)
+     * step=4: (1->2->3->4->7->8->9->11)->(5->6)
+     * step=8: (1->2->3->4->5->6->7->8->9->11)
+     * </pre>
      * @param head
      * @return
      */
@@ -134,17 +141,45 @@ public class LinkedListSorter {
     }
 
 
+    /**
+     * 对链表的O(nlogn)时间复杂度排序——快排实现
+     *
+     * @param head
+     * @return
+     */
+    public static ListNode quickSortList(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        quickSortList(head, null);
+        return head;
+    }
+
+    private static void quickSortList(ListNode head, ListNode tail) {
+        if (head == tail) {
+            return;
+        }
+        ListNode mid = partition(head, tail);
+        quickSortList(head, mid);
+        quickSortList(mid.next, tail);
+    }
+
+    private static ListNode partition(ListNode head, ListNode tail) {
+        ListNode curr = head, next = head.next;
+        while (next != tail) {
+            if (next.val < curr.val) {
+                int tmp = curr.val;
+                curr.val = next.val;
+                next.val = tmp;
+            }
+            next = next.next;
+        }
+        return curr;
+    }
+
     public static void main(String[] args) {
-        /*ListNode l1 = ListNode.addAll(new int[]{5, 3, 6, 7, 8, 9});
-        l1 = insertionSortList(l1);
-
-        ListNode l2 = ListNode.addAll(new int[]{1, -6, 12, 4, 11, 9});
-        l2 = insertionSortList(l2);
-
-        ListNode listNode = mergeTwoListASC(l1, l2);
-        System.out.println(listNode.toString());*/
         ListNode listNode = ListNode.addAll(new int[]{2, 56, 13, -6, 8, -1, 9, 45});
-        System.out.println(mergerSortList(listNode));
+        System.out.println(quickSortList(listNode));
     }
 
 }

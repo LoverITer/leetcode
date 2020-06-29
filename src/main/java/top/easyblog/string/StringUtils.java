@@ -9,7 +9,7 @@ import java.util.Stack;
 public class StringUtils {
 
 
-    public boolean isEmpty(String str) {
+    public static boolean isEmpty(String str) {
         return str == null || str.length() == 0;
     }
 

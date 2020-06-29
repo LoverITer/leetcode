@@ -74,7 +74,7 @@ public class AppTest {
         ///SelectionSort sort = new SelectionSort();
         System.out.println("starting sort....");
         QuickSort sort = new QuickSort();
-        sort.sort(array);
+        sort.quickSort(array);
         long end=System.nanoTime();
         System.out.println("Completed! Cost "+(end-start)+"ns");
         System.out.println(Arrays.toString(array));
