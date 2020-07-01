@@ -79,7 +79,10 @@ public class TreeNode {
     }
 
     /**
-     * 创建普通的二叉树
+     * 创建普通的二叉树，创建规则是按照:
+     *     i
+     *    / \
+     *  2i  2i+1
      * @param arr
      * @return
      */

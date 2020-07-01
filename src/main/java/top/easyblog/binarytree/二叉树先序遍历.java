@@ -57,7 +57,7 @@ public class 二叉树先序遍历 {
     }
 
     public static void main(String[] args) {
-        /**
+        /*
          *             4
          *            / \
          *           3   7

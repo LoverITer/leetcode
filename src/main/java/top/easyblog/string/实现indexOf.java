@@ -5,7 +5,7 @@ package top.easyblog.string;
  * @modified ：
  * @since ：2020/06/25 22:51
  */
-public class indexOf {
+public class 实现indexOf {
 
     public static int strStr(String haystack, String needle) {
         int max=0;

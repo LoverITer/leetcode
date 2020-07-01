@@ -21,11 +21,12 @@ public class 二叉树中序遍历 {
      * @return
      */
     public static List<Integer> inOrder(TreeNode root) {
-        if (root != null) {
-            inOrder(root.left);
-            ans.add(root.val);
-            inOrder(root.right);
+        if (root == null) {
+            return ans;
         }
+        inOrder(root.left);
+        ans.add(root.val);
+        inOrder(root.right);
         return ans;
     }
 

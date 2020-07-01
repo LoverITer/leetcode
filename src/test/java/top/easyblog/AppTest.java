@@ -9,6 +9,7 @@ import top.easyblog.math.MathUtils;
 import top.easyblog.sort.InsertionSort;
 import top.easyblog.sort.QuickSort;
 import top.easyblog.string.StringUtils;
+import top.easyblog.string.反转字符串;
 
 import java.io.File;
 import java.util.Arrays;
@@ -48,7 +49,7 @@ public class AppTest {
         String str = " apple is                   nice ";
         //System.out.println(stringUtils.compressString(str));
         //System.out.println(stringUtils.isEmpty(str));
-        System.out.println(stringUtils.reverseWords(str));
+        System.out.println(反转字符串.reverseWords(str));
     }
 
 
