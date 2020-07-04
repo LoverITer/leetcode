@@ -122,5 +122,10 @@ public class TreeNode {
         }
     }
 
+    @Override
+    public String toString(){
+       return  二叉树先序遍历.preOrder2(this).toString();
+    }
+
 
 }

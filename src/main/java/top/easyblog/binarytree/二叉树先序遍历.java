@@ -5,7 +5,18 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
-/**
+/** 二叉树的先序遍历指的是这种遍历方式：对一颗二叉树遍历时先访问根节点，再访问左结点，最后访问右节点
+ * <pre>
+ *     1
+ *   /  \
+ *  6    2
+ *     /  \
+ *    3    9
+ *
+ * 输出: [1,6,2,3,9]
+ * </pre>
+ * @see 二叉树中序遍历
+ * @see 二叉树后序遍历
  * @author ：huangxin
  * @modified ：
  * @since ：2020/06/21 23:12

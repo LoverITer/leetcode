@@ -1,12 +1,24 @@
 package top.easyblog.binarytree;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
 /**
- * 二叉树层序遍历 ：BFS ，Queue
+ * <h5>二叉树的层序遍历</h5>
+ * 二叉树层序遍历就是按层来比那里一颗二叉树，例如：
+ * <pre>
+ *                       5
+ *                     /   \
+ *                    3     7
+ *                  /  \   /  \
+ *                 8    1 12   9
+ *  层序遍历结果：[[5],[3,7],[8,1,12,9]]
+ *  </pre>
+ *
+ * <p>由于其层级的关系，我们可以使用队列{@link java.util.Queue}来辅助实现，每次遍历到一个结点
+ * 除了访问一下这个结点的值以外，还需要判断一下这个节点的左右结点如果不为{@code null}就将其加入到队列中</p>
  *
  * @author ：huangxin
  * @modified ：
@@ -15,17 +27,6 @@ import java.util.List;
 public class 二叉树层序遍历 {
 
     /**
-     * <h4>二叉树的层序遍历</h4>
-     * 由于其层级的关系，很明显要用到队列来辅助实现，主要是从左向右，自上而下，
-     * 因此依次将二叉树的各节点入队，这样便可以保证输出的顺序是层序排列的。
-     * <pre>
-     *                       5
-     *                     /   \
-     *                    3     7
-     *                  /  \   /  \
-     *                 8    1 12   9
-     *  </pre>
-     * 层序遍历结果：[[5],[3,7],[8,1,12,9]]
      *
      * @param root 二叉树根节点
      * @return java.util.List 层序遍历结果
@@ -74,7 +75,9 @@ public class 二叉树层序遍历 {
         int[] arr=new int[]{4,3,7,1,-1,2,9,12,5};
         TreeNode tree = TreeNode.createBinarySearchTree(arr);
 
-        System.out.println(levelOrder(tree));
+        List<List<Integer>> lists = levelOrder(tree);
+        Collections.reverse(lists);
+        System.out.println(lists);
 
 
     }

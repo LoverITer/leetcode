@@ -5,7 +5,18 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
-/**
+/**二叉树的后序遍历值的是在比那里一颗二叉树的时候首先访问其左子树，在访问其右子树，最后访问根节点
+ * <pre>
+ *     1
+ *   /  \
+ *  6    2
+ *     /  \
+ *    3    9
+ *
+ * 输出: [6,3,9,2,1]
+ * </pre>
+ * @see 二叉树中序遍历
+ * @see 二叉树先序遍历
  * @author ：huangxin
  * @modified ：
  * @since ：2020/06/27 20:56

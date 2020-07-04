@@ -6,6 +6,19 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
+ * 二叉树中序遍历
+ * <p>二叉树中序遍历是指在遍历一颗二叉树的时候首先遍历其左节点然后遍历根节点最后遍历右节点，例如：</p>
+ * <pre>
+ *     1
+ *   /  \
+ *  6    2
+ *     /  \
+ *    3    9
+ *
+ * 输出: [6,1,3,2,9]
+ * </pre>
+ * @see 二叉树后序遍历
+ * @see 二叉树先序遍历
  * @author ：huangxin
  * @modified ：
  * @since ：2020/06/27 20:50
