@@ -1,8 +1,9 @@
 package top.easyblog.linklist;
 
 /**
- * 单链表结点类型——ListNode
- *
+ * 单链表节点类型——ListNode
+ * <p>一个ListNode实例就表示一个单链表的节点，节点的值保存在int类型的{@code val}中，节点的后继引用
+ * 保存在ListNode类型的{@code next}中</p>
  * @author ：huangxin
  * @modified ：
  * @since ：2020/06/04 09:03
@@ -81,7 +82,7 @@ public class ListNode {
      * @param values int类型的数组
      * @return 链表头结点
      */
-    public static ListNode addAll(int[] values) {
+    public static ListNode newLinkedList(int[] values) {
         ListNode head = null;
         if (values != null && values.length > 0) {
             head = new ListNode(values[0]);

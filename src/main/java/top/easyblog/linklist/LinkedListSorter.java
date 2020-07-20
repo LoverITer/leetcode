@@ -76,13 +76,16 @@ public class LinkedListSorter {
         if (head == null) {
             return null;
         }
-        ListNode slow = head,fast=head,sign=slow;
+        /***
+         * 初始化slow fast都为head的时，中间节点是slow
+         * 初始化slow=head,fast=head.next时，中间节点是slow.next
+         */
+        ListNode slow = head,fast=head;
         while (fast.next != null && fast.next.next != null) {
             fast = fast.next.next;
             slow = slow.next;
-            sign = slow;
         }
-        return sign;
+        return slow;
     }
 
     /**
@@ -178,7 +181,7 @@ public class LinkedListSorter {
     }
 
     public static void main(String[] args) {
-        ListNode listNode = ListNode.addAll(new int[]{2, 56, 13, -6, 8, -1, 9, 45});
+        ListNode listNode = ListNode.newLinkedList(new int[]{2, 56, 13, -6, 8, -1, 9, 45});
         System.out.println(quickSortList(listNode));
     }
 
