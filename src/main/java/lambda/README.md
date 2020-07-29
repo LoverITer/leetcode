@@ -1,4 +1,4 @@
-###  测试Java8新特性——Lambda表达式
+###  Java8新特性——Lambda表达式
 
 #### 1、Lambda表达式简介
 

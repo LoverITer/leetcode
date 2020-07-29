@@ -60,12 +60,17 @@
 <tr>
 <td align="center">lru</td>
 <td align="center">LRU的原理和LRU的常见实现方式</td>
-<td align="center">[LRU算法到底是怎么一回事?](https://github.com/LoverITer/leetcode/tree/master/src/main/java/lru/README.md)</td>
+<td align="center">
+
+[LRU算法到底是怎么一回事?](https://github.com/LoverITer/leetcode/tree/master/src/main/java/lru/)</td>
 </tr>
 <tr>
 <td align="center">lambda</td>
 <td align="center">Lambda学习测试</td>
-<td align="center">[一文搞懂Lambda表达式](https://github.com/LoverITer/leetcode/tree/master/src/main/java/lambda/README.md)</td>
+<td align="center">
+
+[一文搞懂Lambda表达式](https://github.com/LoverITer/leetcode/tree/master/src/main/java/lambda/)
+</td>
 </tr>
 </tbody>
 </table>
