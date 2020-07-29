@@ -1,15 +1,12 @@
 package top.easyblog;
 
-import com.google.common.hash.BloomFilter;
-import com.google.common.hash.Funnel;
-import com.google.common.hash.Funnels;
 import org.junit.Test;
-import top.easyblog.array.ArrayUtils;
-import top.easyblog.math.MathUtils;
-import top.easyblog.sort.InsertionSort;
-import top.easyblog.sort.QuickSort;
-import top.easyblog.string.StringUtils;
-import top.easyblog.string.反转字符串;
+import array.ArrayUtils;
+import math.MathUtils;
+import sort.InsertionSort;
+import sort.QuickSort;
+import string.StringUtils;
+import string.反转字符串;
 
 import java.io.File;
 import java.util.Arrays;
