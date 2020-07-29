@@ -4,6 +4,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
+ * 基于jdk LinkedHashMap的LRU缓存实现
  * @author ：huangxin
  * @modified ：
  * @since ：2020/07/07 16:40

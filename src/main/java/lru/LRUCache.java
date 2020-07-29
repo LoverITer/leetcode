@@ -4,8 +4,10 @@ import java.util.HashMap;
 
 /**
  * {@code LRU：Least Recently Used}，即最近最久未使用的意思。
- * LRU算法设计思想：是一种常用的页面置换算法，选择最近最久未使用的页面予以淘汰。
- * 当限定的空间已存满数据时，应当把最久没有被访问到的数据淘汰。
+ * LRU算法设计思想：是一种常用的页面置换算法，基本思想是选择最近最久未使用的页面予以淘汰。
+ *
+ * 基本实现思路：维护一个双向链表用于数据存储和结点的快速增删，并且再维护一个Map用于记录缓存
+ * 的key和具体在链表中结点的映射关系，这样做是为了提高缓存的查询效率到O(1)。
  *
  * @author ：huangxin
  * @modified ：
@@ -13,11 +15,10 @@ import java.util.HashMap;
  */
 public class LRUCache<K, V> {
 
-    //当前的大小
-    private int currentSize;
+
     /***缓存的容量*/
     private int capacity;
-    /***存储K和Node节点的映射 Node中会存放KV*/
+    /***存储K和Node节点的映射 Node中会存放K-V*/
     private HashMap<K, Node> cacheMap;
     /***链表头结点*/
     private Node head;
@@ -25,7 +26,6 @@ public class LRUCache<K, V> {
     private Node tail;
 
     public LRUCache(int capacity) {
-        currentSize = 0;
         this.capacity = capacity;
         cacheMap = new HashMap<>(capacity);
     }
@@ -33,13 +33,13 @@ public class LRUCache<K, V> {
     /**
      * 定义双向链表其中K为Map中的Key 降低查找时间复杂度
      */
-    class Node {
+    static class Node<K, V> {
         K key;
         V val;
         Node prev;
         Node next;
 
-        public Node(K key, V val) {
+        Node(K key, V val) {
             this.key = key;
             this.val = val;
         }
@@ -47,7 +47,9 @@ public class LRUCache<K, V> {
 
     /**
      * 访问缓存中的某个值
-     *
+     * <p>
+     *  首先根据给定的key从HashMap中查询是否存在，如果不存在直接返回null；
+     *  如果存在那就返回key所映射的Node的值，并且把结点移动到双链表的头部。
      * @param key
      * @return
      */
@@ -59,7 +61,7 @@ public class LRUCache<K, V> {
         }
         //访问某个结点的时候，将其移动到链表的头部
         this.moveToHead(node);
-        return node.val;
+        return (V) node.val;
     }
 
     /**
@@ -171,7 +173,7 @@ public class LRUCache<K, V> {
     }
 
     public static void main(String[] args) {
-        LRUCache<Integer, String> lru = new LRUCache<Integer, String>(5);
+        LRUCache<Integer, String> lru = new LRUCache<>(5);
         lru.put(1, "a");
         lru.put(2, "b");
         lru.put(3, "c");
