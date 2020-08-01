@@ -1,9 +1,6 @@
 package binarytree;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 /**
  * 二叉树中序遍历
@@ -54,7 +51,7 @@ public class 二叉树中序遍历 {
         if (root == null) {
             return ans;
         }
-        LinkedList<TreeNode> stack = new LinkedList<>();
+        Deque<TreeNode> stack = new ArrayDeque<>();
         while (root != null || !stack.isEmpty()) {
             while (root != null) {
                 //"一头扎下去"
