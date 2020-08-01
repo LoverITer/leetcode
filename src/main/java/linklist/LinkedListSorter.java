@@ -1,5 +1,6 @@
 package linklist;
 
+
 /**
  * 常用排序算法的链表实现
  *
@@ -14,7 +15,7 @@ public class LinkedListSorter {
      * 插入排序的链表实现
      *
      * @param head 待排序链表的头结点
-     * @return top.easyblog.ListNode
+     * @return ListNode
      */
     public static ListNode insertionSortList(ListNode head) {
         //哑结点，作为链表的临时头

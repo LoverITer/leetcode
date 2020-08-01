@@ -1,4 +1,4 @@
-package offer;
+package array;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -11,7 +11,7 @@ import java.util.Map;
  * @modified ：
  * @since ：2020/06/20 23:09
  */
-public class Offer04_二维数组查找 {
+public class 二维数组查找 {
 
     public boolean findNumberIn2DArray(int[][] matrix, int target) {
         int rows, cols;

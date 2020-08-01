@@ -2,9 +2,7 @@ package lambda;
 
 import com.google.common.collect.Lists;
 
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.Deque;
+import java.util.*;
 import java.util.function.Supplier;
 
 /**

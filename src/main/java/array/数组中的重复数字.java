@@ -1,4 +1,4 @@
-package offer;
+package array;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -19,7 +19,7 @@ import java.util.Set;
  * @modified ：
  * @since ：2020/06/20 23:23
  */
-public class Offer03_数组中的重复数字 {
+public class 数组中的重复数字 {
 
 
     /**

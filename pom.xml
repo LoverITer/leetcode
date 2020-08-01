@@ -6,9 +6,13 @@
 
   <groupId>top.easyblog</groupId>
   <artifactId>LeetCode</artifactId>
-  <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>java-base</module>
+    </modules>
 
-  <name>LeetCode</name>
+    <name>LeetCode</name>
   <url>http://www.example.com</url>
 
   <properties>
