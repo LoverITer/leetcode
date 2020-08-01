@@ -54,7 +54,7 @@ public class Exam2 {
                 high--;
             }
             array[low]=array[high];
-            while(low<high&&array[low]<pivot){
+            while(low<high&&array[low]<=pivot){
                 low++;
             }
             array[high]=array[low];

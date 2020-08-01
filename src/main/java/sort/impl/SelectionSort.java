@@ -1,11 +1,13 @@
-package sort;
+package sort.impl;
+
+import sort.IArraySort;
 
 /**
  * @author ：huangxin
  * @modified ：
  * @since ：2020/05/01 23:01
  */
-public class SelectionSort {
+public class SelectionSort implements IArraySort {
 
 
     /**
@@ -13,9 +15,10 @@ public class SelectionSort {
      * 遍历数据，每次从无序序列中找一个比最后一个有序序列大的元素然后放到有序序列末尾即可
      * @param array
      */
-    public void sort(int[] array) {
+    @Override
+    public int[] sort(int[] array) {
         if(array==null||array.length==0){
-            return;
+            return new int[]{};
         }
         for(int i=0;i<array.length-1;i++){
             int min=i;
@@ -33,5 +36,6 @@ public class SelectionSort {
                 array[i]=tmp;
             }
         }
+        return array;
     }
 }

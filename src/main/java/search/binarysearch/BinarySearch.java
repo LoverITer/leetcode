@@ -1,5 +1,7 @@
 package search.binarysearch;
 
+import sort.impl.QuickSort;
+
 import java.util.Random;
 
 /**
@@ -24,7 +26,7 @@ public class BinarySearch {
         if (array == null || array.length == 0) {
             return -1;
         }
-        int mid = low + (high - low) / 2;
+        int mid = low + ((high-low)>>>1);
         if (array[mid] == target) {
             return mid;
         } else if (array[mid] > target) {
@@ -48,7 +50,7 @@ public class BinarySearch {
         }
         int low = 0, high = array.length - 1;
         while (low <= target) {
-            int mid = low + (high - low) / 2;
+            int mid = low + ((high - low) >>>1);
             if (array[mid] == target) {
                 return mid;
             } else if (array[mid] > target) {
@@ -65,10 +67,11 @@ public class BinarySearch {
         Random random=new Random();
         int[] array=new int[100000];
         for(int i=0;i<10_0000;i++){
-            array[i]=i;
+            array[i]=new Random().nextInt(10_000);
         }
+        new QuickSort().sort(array);
         long start=System.nanoTime();
-        int index = new BinarySearch().binarySearch(array, 0,array.length,5000);
+        int index = new BinarySearch().binarySearch(array,5000);
         long end=System.nanoTime();
         System.out.println("查询完毕，结果："+index+",用时："+(end-start)+"ns");
     }

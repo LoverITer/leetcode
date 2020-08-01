@@ -1,26 +1,29 @@
-package sort;
+package sort.impl;
+
+import sort.IArraySort;
 
 /**
+ * 快速排序的基本思想：通过一趟排序将待排记录分隔成独立的两部分，其中一部分记录的关键字均比
+ * 另一部分的关键字小，则可分别对这两部分记录继续进行排序，以达到整个序列有序。
+ * 快速排序使用分治法来把一个串（list）分为两个子串（sub-lists）。具体算法描述如下：
+ * <pre>
+ * 1.从数列中挑出一个元素，称为 “基准”（pivot）,一般以数列的第一个数字为基准；
+ * 2.重新排序数列，所有元素比基准值小的摆放在基准前面，所有元素比基准值大的摆在基准的后面（相同的数可以到任一边）。在这个分区退出之后，该基准就处于数列的中间位置。这个称为分区（partition）操作；
+ * 3.递归地（recursive）把小于基准值元素的子数列和大于基准值元素的子数列排序。
+ * </pre>
  * @author ：huangxin
  * @modified ：
  * @since ：2020/05/01 23:12
  */
-public class QuickSort {
+public class QuickSort implements IArraySort {
 
-    /**
-     * 快速排序JAVA实现
-     * 一趟快速排序的过程叫做一次划分，做法是：先找一个数作为基准值（pivot，一般将一个序列的首元素
-     * 作为基准），然后j“哨兵”从序列末尾开始，i“哨兵”从序列的首元素开始，j向前遍历当找到一个比基准
-     * 值小的数就交换a[i],a[j]，i向后遍历当找到一个比基准值大的数就教换a[i]，a[j]（简而言之就是“边
-     * 挖坑，边添坑”）.这个过程直到i=j时结束。
-     *
-     * @param array
-     */
-    public void quickSort(int[] array) {
+    @Override
+    public int[] sort(int[] array) {
         if (array == null || array.length == 0) {
-            return;
+            return new int[]{};
         }
         quickSort(array, 0, array.length - 1);
+        return array;
     }
 
 
