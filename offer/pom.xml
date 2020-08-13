@@ -5,29 +5,17 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>top.easyblog</groupId>
-  <artifactId>LeetCode</artifactId>
-    <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
-    <modules>
-        <module>java-base</module>
-        <module>sort</module>
-        <module>stack</module>
-        <module>string</module>
-        <module>linkedlist</module>
-        <module>weeklycontest</module>
-        <module>array</module>
-        <module>offer</module>
-        <module>bit</module>
-        <module>lru</module>
-    </modules>
+  <artifactId>offer</artifactId>
+  <version>1.0-SNAPSHOT</version>
 
-    <name>LeetCode</name>
+  <name>offer</name>
+  <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
+    <maven.compiler.source>1.7</maven.compiler.source>
+    <maven.compiler.target>1.7</maven.compiler.target>
   </properties>
 
   <dependencies>
@@ -37,37 +25,6 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
-    <dependency>
-      <groupId>com.google.guava</groupId>
-      <artifactId>guava</artifactId>
-      <version>29.0-jre</version>
-    </dependency>
-    <!-- https://mvnrepository.com/artifact/com.itextpdf/itextpdf -->
-    <dependency>
-      <groupId>com.itextpdf</groupId>
-      <artifactId>itextpdf</artifactId>
-      <version>5.5.13.1</version>
-    </dependency>
-    <!-- https://mvnrepository.com/artifact/org.xhtmlrenderer/core-renderer -->
-    <dependency>
-      <groupId>org.xhtmlrenderer</groupId>
-      <artifactId>core-renderer</artifactId>
-      <version>R8</version>
-    </dependency>
-    <!-- https://mvnrepository.com/artifact/com.itextpdf/itext-asian -->
-    <dependency>
-      <groupId>com.itextpdf</groupId>
-      <artifactId>itext-asian</artifactId>
-      <version>5.2.0</version>
-    </dependency>
-    <!-- https://mvnrepository.com/artifact/org.jsoup/jsoup -->
-    <dependency>
-      <groupId>org.jsoup</groupId>
-      <artifactId>jsoup</artifactId>
-      <version>1.13.1</version>
-    </dependency>
-
   </dependencies>
 
   <build>
@@ -114,15 +71,5 @@
         </plugin>
       </plugins>
     </pluginManagement>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <configuration>
-          <source>8</source>
-          <target>8</target>
-        </configuration>
-      </plugin>
-    </plugins>
   </build>
 </project>

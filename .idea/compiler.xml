@@ -1,6 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Annotation profile for binarytree" enabled="true">
+        <sourceOutputDir name="../algorithm/binarytree/target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../algorithm/binarytree/target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="binarytree" />
+      </profile>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="lru" />
+        <module name="stack" />
+        <module name="sort" />
+        <module name="linkedlist" />
+        <module name="string" />
+        <module name="array" />
+        <module name="weeklycontest" />
+        <module name="bit" />
+        <module name="offer" />
+      </profile>
+      <profile name="Annotation profile for algorithm" enabled="true">
+        <sourceOutputDir name="../algorithm/search/target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../algorithm/search/target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="search" />
+      </profile>
+    </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="java-base" target="1.8" />
     </bytecodeTargetLevel>
