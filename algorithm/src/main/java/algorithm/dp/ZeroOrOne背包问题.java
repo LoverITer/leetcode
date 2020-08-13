@@ -15,7 +15,7 @@ import java.util.Scanner;
  * @modified ：
  * @since ：2020/08/13 08:17
  */
-public class ZeroOrOnePackage {
+public class ZeroOrOne背包问题 {
 
     /**
      * <pre>
