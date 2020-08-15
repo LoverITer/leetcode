@@ -8,10 +8,10 @@
     <file url="file://$PROJECT_DIR$/bit" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/linkedlist" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/lru" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lru/stack" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/offer" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/search" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sort" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/stack" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/string" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/weeklycontest" charset="UTF-8" />
   </component>

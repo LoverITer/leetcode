@@ -1,4 +1,4 @@
-package 科大讯飞提前批;
+package _20200731;
 
 import java.math.BigInteger;
 import java.util.Scanner;

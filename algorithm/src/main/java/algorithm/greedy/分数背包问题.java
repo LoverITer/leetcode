@@ -65,6 +65,7 @@ public class 分数背包问题 {
             values[i] = sc.nextInt();
         }
         System.out.println(helper(w, wight, values));
+
     }
 
 }

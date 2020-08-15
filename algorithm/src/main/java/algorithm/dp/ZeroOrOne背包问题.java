@@ -53,8 +53,8 @@ public class ZeroOrOne背包问题 {
             }
         }
 
-        for (int i=0;i<dp.length;i++)
-           System.out.println(Arrays.toString(dp[i]));
+        /*for (int i=0;i<dp.length;i++)
+           System.out.println(Arrays.toString(dp[i]));*/
         return dp[N][W];
     }
 
