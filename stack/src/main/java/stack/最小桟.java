@@ -15,7 +15,7 @@ import java.util.Deque;
  * @modified ：
  * @since ：2020/07/24 23:48
  */
-public class MinStack {
+public class 最小桟 {
 
     public static void main(String[] args) {
         MinStackI minStackI = new MinStackI();

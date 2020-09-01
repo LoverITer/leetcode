@@ -1,4 +1,4 @@
-package lru;
+package cache.lru;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -33,7 +33,19 @@ public class LinkedHashMapLRU<K, V> extends LinkedHashMap<K, V> {
 
 class Test{
     public static void main(String[] args) {
-        Map<String, String> lru = new LinkedHashMapLRU<>(10);
-
+        Map<String, String> lru = new LinkedHashMapLRU<>(4);
+        lru.put("1","a");
+        lru.put("2","b");
+        lru.put("3","c");
+        lru.put("4","d");
+        lru.get("4");
+        System.out.println(lru.toString());
+        lru.put("5","e");
+        lru.get("5");
+        System.out.println(lru.toString());
+        lru.get("3");
+        System.out.println(lru.toString());
+        lru.put("6","d");
+        System.out.println(lru.toString());
     }
 }

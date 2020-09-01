@@ -12,13 +12,15 @@
         <module>algorithm</module>
         <module>sort</module>
         <module>stack</module>
+        <module>search</module>
         <module>string</module>
         <module>linkedlist</module>
         <module>weeklycontest</module>
         <module>array</module>
         <module>offer</module>
         <module>bit</module>
-        <module>lru</module>
+        <module>cache.lru</module>
+        <module>binarytree</module>
     </modules>
 
     <name>LeetCode</name>

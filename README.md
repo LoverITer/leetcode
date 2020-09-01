@@ -58,11 +58,11 @@
 <td align="center">暂无</td>
 </tr>
 <tr>
-<td align="center">lru</td>
+<td align="center">cache.lru</td>
 <td align="center">LRU的原理和LRU的常见实现方式</td>
 <td align="center">
 
-[LRU算法到底是怎么一回事?](https://github.com/LoverITer/leetcode/tree/master/src/main/java/lru/)</td>
+[LRU算法到底是怎么一回事?](https://github.com/LoverITer/leetcode/tree/master/src/main/java/cache.lru/)</td>
 </tr>
 <tr>
 <td align="center">lambda</td>

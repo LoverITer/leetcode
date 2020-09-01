@@ -1,7 +1,6 @@
 package binarytree;
 
-import binarytree.TreeNode;
-import linklist.ListNode;
+
 
 /**
  * 给定一个单链表，其中的元素按升序排序，将其转换为高度平衡的二叉搜索树。
@@ -33,7 +32,7 @@ public class 单链表转化为二叉搜索树 {
      * @param head 链表头结点
      * @return
      */
-    public TreeNode sortedListToBST(ListNode head) {
+    /*public TreeNode sortedListToBST(ListNode head) {
         if (head == null) {
             return null;
         }
@@ -54,7 +53,7 @@ public class 单链表转化为二叉搜索树 {
         root.right=sortedListToBST(slower.next);
         return root;
     }
-
+*/
     public static void main(String[] args) {
 
     }

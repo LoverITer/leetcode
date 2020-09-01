@@ -1,7 +1,5 @@
 package search.binarysearch;
 
-import sort.impl.QuickSort;
-
 import java.util.Random;
 
 /**
@@ -69,7 +67,7 @@ public class BinarySearch {
         for(int i=0;i<10_0000;i++){
             array[i]=new Random().nextInt(10_000);
         }
-        new QuickSort().sort(array);
+        //new QuickSort().sort(array);
         long start=System.nanoTime();
         int index = new BinarySearch().binarySearch(array,5000);
         long end=System.nanoTime();
