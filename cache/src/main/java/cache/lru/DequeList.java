@@ -7,7 +7,7 @@ import javax.annotation.Nonnull;
  * @modified ：
  * @since ：2020/08/31 11:14
  */
-public class DequeList<K, V> {
+public class DequeList {
 
     //链表头尾结点
     private Node head;
@@ -38,10 +38,6 @@ public class DequeList<K, V> {
 
     //添加到队头
     public void addHead(@Nonnull Node node) {
-        /*node.prev = tail.prev;
-        node.next = tail;
-        tail.prev.next = node;
-        tail.prev = node;*/
         node.prev=head;
         node.next=head.next;
         head.next.prev=node;
@@ -58,7 +54,7 @@ public class DequeList<K, V> {
     }
 
     //移除链表尾部结点
-    public Node removeFirst() {
+    public Node removeLast() {
         if (head.next == null) {
             return null;
         }

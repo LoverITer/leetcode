@@ -7,20 +7,17 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="stack" />
-        <module name="sort" />
         <module name="binarytree" />
-        <module name="string" />
         <module name="linkedlist" />
-        <module name="weeklycontest" />
-        <module name="search" />
+        <module name="cache" />
+        <module name="string" />
         <module name="array" />
+        <module name="sort" />
+        <module name="search" />
         <module name="bit" />
+        <module name="weekgame" />
         <module name="offer" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="java-base" target="1.8" />
-      <module name="lru" target="8" />
-    </bytecodeTargetLevel>
   </component>
 </project>

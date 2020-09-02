@@ -19,7 +19,7 @@
         <module>array</module>
         <module>offer</module>
         <module>bit</module>
-        <module>cache.lru</module>
+        <module>cache</module>
         <module>binarytree</module>
     </modules>
 

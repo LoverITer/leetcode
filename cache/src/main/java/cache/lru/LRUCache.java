@@ -24,12 +24,12 @@ public class LRUCache<K, V> implements Cache<K,V> {
     /***存储K和Node节点的映射 Node中会存放K-V*/
     private HashMap<K, DequeList.Node> map;
     /***双向链表*/
-    private DequeList<K, V> cache;
+    private DequeList cache;
 
     public LRUCache(int capacity) {
         this.capacity = capacity;
         map = new HashMap<>(capacity);
-        cache = new DequeList<>();
+        cache = new DequeList();
     }
 
 
@@ -63,7 +63,7 @@ public class LRUCache<K, V> implements Cache<K,V> {
             addRecently(key,val);
             return;
         }
-        if(cache.size()==capacity){
+        if(cache.size()>=capacity){
             //删除最近未使用的数据
             removeEldestNode();
         }
@@ -102,7 +102,7 @@ public class LRUCache<K, V> implements Cache<K,V> {
     /*** 删除最久未使用的元素 */
     private void removeEldestNode() {
         // 链表头部的第一个元素就是最久未使用的
-        DequeList.Node deletedNode = cache.removeFirst();
+        DequeList.Node deletedNode = cache.removeLast();
         //从 map 中删除它的 key
         K deletedKey = (K) deletedNode.key;
         map.remove(deletedKey);
@@ -114,7 +114,7 @@ public class LRUCache<K, V> implements Cache<K,V> {
     }
 
     public static void main(String[] args) {
-        LRUCache<Integer, String> lru = new LRUCache<>(5);
+        /*Cache<Integer, String> lru = new LRUCache<>(5);
         lru.put(1, "a");
         lru.put(2, "b");
         lru.put(3, "c");
@@ -129,6 +129,17 @@ public class LRUCache<K, V> implements Cache<K,V> {
         System.out.println("新添加一个key=6之后的链表：" + lru.toString());
 
         lru.put(7,"454");
-        System.out.println("新添加key=7之后的链表" + lru.toString());
+        System.out.println("新添加key=7之后的链表" + lru.toString());*/
+
+        Cache<Integer, Integer> cache = new LRUCache<>(2);
+        cache.put(1,1);
+        cache.put(2,2);
+        System.out.println(cache.get(1)); //1
+        cache.put(3,3);
+        System.out.println(cache.get(2));   //2
+        cache.put(4,4);
+        System.out.println(cache.get(1));    //-1
+        System.out.println(cache.get(3));    //3
+        System.out.println(cache.get(4));    //4
     }
 }
