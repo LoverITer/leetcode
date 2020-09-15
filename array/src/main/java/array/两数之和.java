@@ -1,7 +1,9 @@
 package array;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 /**
  * 给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。
@@ -21,7 +23,7 @@ public class 两数之和 {
      * @param target 目标值
      * @return
      */
-    public int[] twoSum(int[] nums, int target) {
+    public static  int[] twoSum(int[] nums, int target) {
         if (nums == null || nums.length == 0) {
             return new int[]{};
         }
@@ -34,6 +36,18 @@ public class 两数之和 {
             map.put(nums[i], i);
         }
         return new int[]{};
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String line = sc.nextLine();
+        String[] s = line.split(" ");
+        int[] nums=new int[s.length];
+        for(int i=0;i< s.length;i++){
+            nums[i]=Integer.parseInt(s[i]);
+        }
+        int target=sc.nextInt();
+        System.out.println(Arrays.toString(twoSum(nums, target)));
     }
 
 }

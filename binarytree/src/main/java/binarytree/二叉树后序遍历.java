@@ -1,9 +1,6 @@
 package binarytree;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 /**二叉树的后序遍历值的是在比那里一颗二叉树的时候首先访问其左子树，在访问其右子树，最后访问根节点
  * <pre>
@@ -46,7 +43,7 @@ public class 二叉树后序遍历 {
             return ans;
         }
         TreeNode lastVisit = null;
-        LinkedList<TreeNode> stack = new LinkedList<>();
+        Deque<TreeNode> stack = new LinkedList<>();
         while (root != null || !stack.isEmpty()) {
             while (root != null) {
                 stack.push(root);

@@ -74,7 +74,7 @@ public class LRUCache<K, V> implements Cache<K,V> {
      * 将某个 key 提升为最近使用的
      */
     private void makeRecent(K key) {
-        DequeList.Node node = map.get(key);
+        DequeList.Node<K,V> node = map.get(key);
         // 先从链表中删除这个节点
         cache.remove(node);
         // 重新插到队头
@@ -103,9 +103,9 @@ public class LRUCache<K, V> implements Cache<K,V> {
     private void removeEldestNode() {
         // 链表头部的第一个元素就是最久未使用的
         DequeList.Node deletedNode = cache.removeLast();
-        //从 map 中删除它的 key
-        K deletedKey = (K) deletedNode.key;
-        map.remove(deletedKey);
+        if(deletedNode!=null) {
+            map.remove(deletedNode.key);
+        }
     }
 
     @Override
@@ -131,12 +131,12 @@ public class LRUCache<K, V> implements Cache<K,V> {
         lru.put(7,"454");
         System.out.println("新添加key=7之后的链表" + lru.toString());*/
 
-        Cache<Integer, Integer> cache = new LRUCache<>(2);
+        Cache<Integer, Integer> cache = new LRUCache<Integer, Integer>(2);
         cache.put(1,1);
         cache.put(2,2);
         System.out.println(cache.get(1)); //1
         cache.put(3,3);
-        System.out.println(cache.get(2));   //2
+        System.out.println(cache.get(2));   //-1
         cache.put(4,4);
         System.out.println(cache.get(1));    //-1
         System.out.println(cache.get(3));    //3

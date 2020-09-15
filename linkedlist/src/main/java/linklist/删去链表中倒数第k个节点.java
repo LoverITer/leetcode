@@ -1,7 +1,5 @@
 package linklist;
 
-import java.util.List;
-
 /**
  * @author ：huangxin
  * @modified ：
@@ -14,30 +12,33 @@ public class 删去链表中倒数第k个节点 {
         if(head==null){
             return null;
         }
-        ListNode fast=head,pre=null,p=head;
-        while (--k!=0&&fast.next!=null){
-            fast=fast.next;
+        ListNode faster=head,slow=head,pre=null;
+        while(--k>0&&faster.next!=null){
+            faster=faster.next;
         }
-        if(k==0&&fast.next==null){
+        //考虑删除头结点的情况
+        if(k==0&&faster.next==null){
             //删除头结点
             head=head.next;
         }
-        if(k!=0||fast.next==null){
+        //考虑没有K个结点的情况
+        if(k!=0||faster.next==null){
             //没有k个结点
             return head;
         }
-        while (fast.next!=null){
-            pre=p;
-            p=p.next;
-            fast=fast.next;
+        //常规删除操作
+        while(faster.next!=null){
+            pre=slow;
+            slow=slow.next;
+            faster=faster.next;
         }
-        pre.next=p.next;
+        pre.next=slow.next;
         return head;
     }
 
 
     public static void main(String[] args) {
-        System.out.println(deleteKthNode(ListNode.newLinkedList(new int[]{4, 2, 6, 8, 1, 2, 9}), 7).toString());
+        System.out.println(deleteKthNode(ListNode.newLinkedList(new int[]{2}), 1).toString());
     }
 
 }

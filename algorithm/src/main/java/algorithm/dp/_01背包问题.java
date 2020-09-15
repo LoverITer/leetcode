@@ -1,6 +1,5 @@
 package algorithm.dp;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -15,7 +14,7 @@ import java.util.Scanner;
  * @modified ：
  * @since ：2020/08/13 08:17
  */
-public class ZeroOrOne背包问题 {
+public class _01背包问题 {
 
     /**
      * <pre>

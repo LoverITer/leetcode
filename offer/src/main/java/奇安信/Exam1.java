@@ -1,4 +1,4 @@
-package _20200816;
+package 奇安信;
 
 /**
  * @author ：huangxin
@@ -6,8 +6,6 @@ package _20200816;
  * @since ：2020/08/16 14:52
  */
 public class Exam1 {
-
-
 
     public static int CalulateMethodCount (int money) {
         if(money<=0){

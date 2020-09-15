@@ -124,6 +124,18 @@ public class Main {
         addRecently(key,value);
     }
 
+    public int breakfastNumber(int[] staple, int[] drinks, int x) {
+        int ans=0;
+        for(int i=0;i<staple.length;i++){
+            for(int j=0;j<drinks.length;j++){
+                if(staple[i]+drinks[j]==x){
+                    ans++;
+                }
+            }
+        }
+        return ans%1000000007;
+    }
+
     public static void main(String[] args) {
         Main cache = new Main(2);
         cache.put(1,1);

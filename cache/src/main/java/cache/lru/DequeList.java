@@ -7,15 +7,15 @@ import javax.annotation.Nonnull;
  * @modified ：
  * @since ：2020/08/31 11:14
  */
-public class DequeList {
+public class DequeList<K, V>  {
 
     //链表头尾结点
-    private Node head;
-    private Node tail;
+    private Node<K, V>  head;
+    private Node<K, V>  tail;
     //链表长度
     private int size;
 
-    static class Node<K, V> {
+     static class Node<K, V> {
         K key;
         V val;
         Node<K, V> next;
@@ -37,7 +37,7 @@ public class DequeList {
     }
 
     //添加到队头
-    public void addHead(@Nonnull Node node) {
+    public void addHead(@Nonnull Node<K,V> node) {
         node.prev=head;
         node.next=head.next;
         head.next.prev=node;
@@ -47,7 +47,7 @@ public class DequeList {
 
     // 删除链表中的 node 节点（node 一定存在）
     // 由于是双链表且给的是目标 Node 节点，时间 O(1)
-    public void remove(@Nonnull Node node) {
+    public void remove(@Nonnull Node<K,V> node) {
         node.prev.next = node.next;
         node.next.prev = node.prev;
         size--;
@@ -55,7 +55,7 @@ public class DequeList {
 
     //移除链表尾部结点
     public Node removeLast() {
-        if (head.next == null) {
+        if (head.next == tail) {
             return null;
         }
         Node last = tail.prev;

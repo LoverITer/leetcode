@@ -1,7 +1,6 @@
 package binarytree;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -76,7 +75,6 @@ public class 二叉树层序遍历 {
         TreeNode tree = TreeNode.createBinarySearchTree(arr);
 
         List<List<Integer>> lists = levelOrder(tree);
-        Collections.reverse(lists);
         System.out.println(lists);
 
 

@@ -1,9 +1,7 @@
 package sort.impl;
 
-import array.ArrayUtils;
 import sort.IArraySort;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 /**

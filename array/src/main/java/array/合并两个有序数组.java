@@ -25,12 +25,10 @@ public class 合并两个有序数组 {
         int p1=0;
         int p2=0;
         int p=0;
-
         //归并排序：归并
         while((p1<m)&&(p2<n)){
             nums1[p++]=(nums3[p1]<nums2[p2])?nums3[p1++]:nums2[p2++];
         }
-
         //还有数组没遍历完
         if(p1<m){
             System.arraycopy(nums3,p1,nums1,p1+p2,m + n - p1 - p2);

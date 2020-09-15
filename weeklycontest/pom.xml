@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>top.easyblog</groupId>
-  <artifactId>weekgame</artifactId>
+  <artifactId>weeklycontest</artifactId>
   <version>1.0-SNAPSHOT</version>
 
   <name>weeklycontest</name>

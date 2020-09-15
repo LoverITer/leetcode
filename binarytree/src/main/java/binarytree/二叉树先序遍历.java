@@ -1,9 +1,6 @@
 package binarytree;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 /** 二叉树的先序遍历指的是这种遍历方式：对一颗二叉树遍历时先访问根节点，再访问左结点，最后访问右节点
  * <pre>
@@ -51,7 +48,7 @@ public class 二叉树先序遍历 {
         if (root == null) {
             return ans;
         }
-        LinkedList<TreeNode> stack = new LinkedList<>();
+        Deque<TreeNode> stack = new ArrayDeque<>();
         while (root != null || !stack.isEmpty()) {
             while (root != null) {
                 //前序遍历，这里直接打印结点即可

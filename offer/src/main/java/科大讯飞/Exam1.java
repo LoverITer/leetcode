@@ -1,4 +1,4 @@
-package _20200731;
+package 科大讯飞;
 
 import java.util.Scanner;
 

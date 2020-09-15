@@ -1,4 +1,4 @@
-package array;
+package algorithm.backtrack;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;

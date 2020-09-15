@@ -1,6 +1,5 @@
 package sort.impl;
 
-import org.checkerframework.checker.units.qual.A;
 import sort.IArraySort;
 
 import java.util.Arrays;

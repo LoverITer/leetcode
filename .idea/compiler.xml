@@ -14,8 +14,8 @@
         <module name="array" />
         <module name="sort" />
         <module name="search" />
+        <module name="weeklycontest" />
         <module name="bit" />
-        <module name="weekgame" />
         <module name="offer" />
       </profile>
     </annotationProcessing>

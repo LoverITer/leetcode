@@ -21,11 +21,14 @@ public class Permutation {
      * @param str
      * @return
      */
-    public static List<String> permute(String str) {
-        List<String> list = new ArrayList<>();
+    public static List<List<Character>> permute(String str) {
+        List<Character> list = new ArrayList<>();
         if (str == null) return null;
-        backtrack(str.toCharArray(), 0, list);
-        return list;
+        char[] chars = str.toCharArray();
+        boolean[] used = new boolean[chars.length];
+        List<List<Character>> ans = new ArrayList<>();
+        dfs(chars, used, 0, ans, list);
+        return ans;
     }
 
     /**
@@ -44,6 +47,31 @@ public class Permutation {
      *      撤销选择
      *  </pre>
      */
+    public static void dfs(char[] chars, boolean[] used, int depth, List<List<Character>> ans, List<Character> list) {
+        if (depth == chars.length) {
+            //这里需要将list父复制一份
+            ans.add(new ArrayList<>(list));
+            return;
+        }
+        //dfs
+        for (int i = 0; i < chars.length; i++) {
+            if (!used[i]) {
+                //选择
+                list.add(chars[i]);
+                used[i] = true;
+                System.out.println("递归之前："+list.toString());
+                //选择列表  是否使用  路径  最总答案 本次答案
+                dfs(chars, used, depth + 1, ans, list);
+                //撤销选择
+                list.remove(list.size()-1);
+                used[i] = false;
+                System.out.println("递归之后："+list.toString());
+
+            }
+        }
+    }
+
+/*
     private static void backtrack(char[] array, int start, List<String> list) {
         if (start == array.length - 1) {
             list.add(new String(array));
@@ -62,8 +90,9 @@ public class Permutation {
             }
         }
     }
+*/
 
-    private static boolean isSwap(char[] array, int start, int end) {
+    /*private static boolean isSwap(char[] array, int start, int end) {
         for (int i = start; i < end; i++) {
             if (array[i] == array[end]) {
                 return false;
@@ -71,7 +100,7 @@ public class Permutation {
         }
         return true;
     }
-
+*/
 
     public static void main(String[] args) {
         permute("123").forEach(obj -> System.out.print(obj + " "));

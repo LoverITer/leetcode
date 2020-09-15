@@ -88,7 +88,9 @@ public class ArrayUtils {
         //将遍历过的逆序区域转换为顺序的,i一定是一次交换中较小的数，j一定是一次交换中较大的数，
         // 因此直接交换他们即可
         for (int i = index + 1, j = nums.length - 1; i < j; i++, j--) {
-            swap(nums, i, j);
+            int temp = nums[i];
+            nums[i] = nums[j];
+            nums[j] = temp;
         }
         return nums;
     }
